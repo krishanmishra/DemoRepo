@@ -31,8 +31,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-
-import com.qa.Pages.PracticePage1;
+import com.qa.Pages.HomePage;
+import com.qa.Pages.LoginPage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -51,7 +51,8 @@ public abstract class BaseTest {
 	public static ExtentReports extent;
 
 	/* pages object initialization */
-	protected PracticePage1 practicePage1;
+	protected LoginPage loginPage;
+	protected HomePage homePage;
 
 	enum DriverType {
 		Firefox, IE, Chrome
@@ -108,9 +109,9 @@ public abstract class BaseTest {
 		getWebDriver().manage().window().maximize();
 
 		/* open application URL */
-		getWebDriver().navigate().to(applicationUrl);
-		
-		practicePage1 = PageFactory.initElements(getWebDriver(), PracticePage1.class);
+		getWebDriver().navigate().to(applicationUrl);		
+		loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
+		homePage = PageFactory.initElements(getWebDriver(), HomePage.class);
 	}
 
 	@AfterMethod
