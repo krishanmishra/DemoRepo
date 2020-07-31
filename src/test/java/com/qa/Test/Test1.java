@@ -17,5 +17,10 @@ public class Test1 extends BaseTest {
 	public void testFirst() {
 		System.out.println("Test First case");
 	}
+	
+	@Test
+	public void testFirst1() {
+		System.out.println("Running Test First case1");
+	}
 
 }
